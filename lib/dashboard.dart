@@ -38,7 +38,7 @@ class _DashboardPageState extends State<DashboardPage> {
               child: Center(
                 child: Column(
                   children: <Widget>[
-                    SizedBox(height: 30),
+                    SizedBox(height: 50),
                     InkWell(
                       onTap: () {},
                       child: Text(
@@ -62,7 +62,7 @@ class _DashboardPageState extends State<DashboardPage> {
                         ),
                       ),
                     ),
-                    SizedBox(height: 20.0),
+                    SizedBox(height: 40.0),
                     Text(
                       widget.currencyOne,
                       style: TextStyle(
@@ -71,7 +71,63 @@ class _DashboardPageState extends State<DashboardPage> {
                         fontFamily: 'Quicksand',
                         fontWeight: FontWeight.bold
                       ),
-                    )
+                    ),
+                    SizedBox(height: 40),
+                    Container(
+                      height: 125.0,
+                      width: 125.0,
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(62.5),
+                        color: Colors.white,
+                        border: Border.all(
+                          color: Color(0xFFEC5759),
+                          style: BorderStyle.solid,
+                          width: 5.0,
+                        )
+                      ),
+                      child: widget.isWhite ?
+                          Icon(Icons.arrow_upward,
+                            size: 60.0,
+                            color: Color(0xFFEC5759),
+                          ) :
+                          Icon(Icons.arrow_downward,
+                            size: 60.0,
+                            color: Color(0xFFEC5759),
+                          )
+                    ),
+                  SizedBox(height: 40.0),
+                  Text(
+                    widget.currencyTwo,
+                    style: TextStyle(
+                        color: Color(0xFFFFB6B6),
+                        fontSize: 17.0,
+                        fontFamily: 'Quicksand',
+                        fontWeight: FontWeight.bold
+                    ),
+                  ),
+                    InkWell(
+                      onTap: () {},
+                      child: Text(
+                        widget.convertedCurrency.toString(),
+                        style: TextStyle(
+                            color: Color(0xFFEC5759),
+                            fontSize: 120.0,
+                            fontFamily: 'Quicksand'
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: 30.0),
+                    InkWell(
+                      onTap: () {},
+                      child: Text(
+                        CurrencyService().getCurrencyString(widget.currencyTwo),
+                        style: TextStyle(
+                            color: Color(0xFFEC5759),
+                            fontSize: 22.0,
+                            fontFamily: 'Quicksand'
+                        ),
+                      ),
+                    ),
 
                   ],
                 )
