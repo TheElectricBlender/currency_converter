@@ -1,15 +1,16 @@
 import 'package:currency_converter/currency_service.dart';
+import 'package:currency_converter/white_input.dart';
 import 'package:flutter/material.dart';
 
 class DashboardPage extends StatefulWidget {
   final currencyVal;
-  final convertedCurrency;
+  final convCurrency;
   final currencyOne;
   final currencyTwo;
   final isWhite;
 
   DashboardPage({this.currencyVal,
-    this.convertedCurrency,
+    this.convCurrency,
     this.currencyOne,
     this.currencyTwo,
     this.isWhite});
@@ -106,9 +107,19 @@ class _DashboardPageState extends State<DashboardPage> {
                     ),
                   ),
                     InkWell(
-                      onTap: () {},
+                      onTap: () {
+                        Navigator.of(context).pushReplacement(
+                            MaterialPageRoute(
+                                builder: (context) =>
+                                    InputWhitePage(
+                                        origCurrency: widget.currencyOne,
+                                        convCurrency: widget.currencyTwo
+                                    )
+                            ));
+
+                      },
                       child: Text(
-                        widget.convertedCurrency.toString(),
+                        widget.convCurrency.toString(),
                         style: TextStyle(
                             color: Color(0xFFEC5759),
                             fontSize: 120.0,

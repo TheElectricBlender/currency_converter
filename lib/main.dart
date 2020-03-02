@@ -3,8 +3,10 @@ import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
 
+
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -26,8 +28,8 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: DashboardPage(currencyVal: 0.0,
-            convertedCurrency: 0.0,
+        body: DashboardPage(currencyVal: 0,
+            convCurrency: 0,
             currencyOne: 'USD',
             currencyTwo: 'RUB',
             isWhite: false),
